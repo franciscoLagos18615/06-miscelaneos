@@ -23,3 +23,13 @@
   <button type="button" name="button" [ngClass]="{'btn-danger':propiedades.danger, 'btn-info':!propiedades.danger}" class="btn" (click)="propiedades.danger = !propiedades.danger">
       Cambiar
     </button>
+<br><br>
+
+<h3>Proceso Asicrono</h3>
+
+<button (click)="ejecutar()"   type="button" name="button" class="btn btn-primary" [disabled]="loading">
+  <i [ngClass]="{'fa-save':!loading, 'fa-sync fa-spin':loading}"
+  class="fa fa-sync fa-spin"></i>
+  <span *ngIf="!loading">Guardar Cambios</span>
+    <span *ngIf="loading" >Espere por favor</span>
+  </button>
